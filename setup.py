@@ -19,7 +19,7 @@ def find_stub_files():
     https://github.com/dropbox/sqlalchemy-stubs/blob/master/LICENSE
     """
     result = []
-    for root, dirs, files in os.walk("flask-httpauth-stubs"):
+    for root, dirs, files in os.walk("flask_httpauth-stubs"):
         for file in files:
             if file.endswith(".pyi"):
                 if os.path.sep in root:
@@ -30,8 +30,9 @@ def find_stub_files():
 
 
 setup(
+    name="Flask-HTTPAuth-stubs",
     # py_modules=['flask_httpauth_stubs'],
     install_requires=["mypy>=0.720", "typing-extensions>=3.7.4"],
-    packages=["flask-httpauth-stubs"],
-    package_data={"flask-httpauth-stubs": find_stub_files()},
+    packages=["flask_httpauth-stubs"],
+    package_data={"flask_httpauth-stubs": find_stub_files()},
 )
