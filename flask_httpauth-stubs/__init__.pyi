@@ -48,7 +48,11 @@ class HTTPAuth:
     def auth_error_callback(self, status: int=200): ...
 
 class HTTPBasicAuth(HTTPAuth):
-    def __init__(self, scheme: None = ..., realm: Optional[str] = ...) -> None:
+    def __init__(
+        self,
+        scheme: Optional[str] = ...,
+        realm: Optional[str] = ...,
+    ) -> None:
         super(HTTPBasicAuth, self).__init__(scheme or "Basic", realm)
 
         self.hash_password_callback = None
